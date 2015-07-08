@@ -1,0 +1,100 @@
+// -----------------------------------------------------------------------
+// This file is part of AROUNDMe
+// 
+// Copyright (C) 2003-2008 Barnraiser
+// http://www.barnraiser.org/
+// info@barnraiser.org
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program; see the file COPYING.txt. If not, see
+// <http://www.gnu.org/licenses/>
+// -----------------------------------------------------------------------
+ 
+
+>> Note: If you have feedback or have found a bug please report it to
+   our supporters network at http://www.barnraiser.org/
+
+>> 1.6.2; 27th March 2008
+   1. Fixed missing "/" in blog RSS link.
+   2. Fixed problem with cron auto sending of forum notifications.
+   3. OpenID 2.0 support added.
+   4. Fixed a problem with no SREG support when connecting.
+   5. Fixed forum maintain 'no tags' template language error.
+   6. Fixed network application 'email' template language error.
+   7. Fixed bug with forum add subject showing all subjects (not just the webspace).
+   8. Updates to forum digest to include latest replies.
+   9. Changed the guestbook list to use LI items (was tables).
+   10. Trimmed nickname to stop white-space nicknames.
+
+
+>> 1.6.1; 15th February 2008
+   1. Email contact plugin added.
+   2. Wiki edit page error fixed.
+   3. RSS link added between comments and no comment views.
+   3. Create webspace language error fixed.
+   4. Add discussion error fixed.
+   5. New theme added.
+
+
+>> 1.6; 6th February 2008
+   1. People with blog comment filter permission can now re-apply comment visibility.
+   2. Listing add buttons fixed.
+   3. Language pack applied.
+   4. More design to the add discussion page
+   5. Fixed avatars in network screen.
+   6. Installer re-written to provide pre-installation check list.
+   7. Network screen now redirects to list if connection is not present.
+   8. More links added to blog and forum lists.
+   9. Blog and forum lists converted to unordered lists from tables.
+   10. Guestbook "max characters" checker added to guestbook add form.
+   11. Tagcloud font sizes added to allow for CSS size styling.
+
+
+>> 1.5.4; 18th January 2008
+   1. Notifications and tracking added
+   2. Email digest added
+   3. Copylefts updated to 2008
+   4. Avatars - full path links added
+   5. Wiki page body now trimmed and trailing line break removed.
+   6. Fixed forum discussion add issue with stripslashes.
+   7. Fixed revision history list.
+
+
+
+>> 1.5.3; 30th December 2007
+   1. Link in poplog when adding a discussion reply fixed.
+   2. Installation header check fixed for HTTP 1.0 and 1.1.
+   3. Mkdir fixed for umask issue.
+
+
+>> 1.5.2; 22nd December 2007
+   1. Fixed RSS PubDate format.
+   2. Installer fixed for permissions issues.
+   3. OpenID delegate problem fixed.
+
+
+>> 1.5.1; 12th December 2007
+   1. OpenID URi recorded now (and not the delegate).
+   2. Nickname is checked and if empty user is prompted.
+   3. Installer PHP Math library check.
+   4. empty space trimmed off front of OpenID upon connection.
+   5. Recommended replies now only list for the webspace.
+   6. Version and installation date added to template comment (for support).
+   7. Lock screen now checks for Name and Email for applications.
+   8. Mail send language error fixed.
+   9. PDF thumbnail added in files section.
+   10. Javascript length checker added to guestbook textarea.
+   11. You can now barr a connection.
+   12. Barred connections now do not appear in connections gallery.
+   13. Forum tagcloud no longer lists delisted discussions.
+   14. Editing a wiki page with <code> no longer removes top line break.

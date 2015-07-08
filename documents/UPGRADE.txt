@@ -1,0 +1,69 @@
+// -----------------------------------------------------------------------
+// This file is part of AROUNDMe
+// 
+// Copyright (C) 2003-2008 Barnraiser
+// http://www.barnraiser.org/
+// info@barnraiser.org
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program; see the file COPYING.txt.  If not, see
+// <http://www.gnu.org/licenses/>
+// -----------------------------------------------------------------------
+
+
+   ** ALWAYS PERFORM A FULL FILE AND DATABASE BACKUP BEFORE UPGRADING **
+
+
+>> From version 1.6.1 to version 1.6.2
+
+   LANGUAGE CHANGES
+   update barnraiser_forum/language/*/email/send_digest.html.php
+   update barnraiser_forum/language/*/email/send_digest.txt.php
+   ADD $lang['core_note_max_file_size'] = "The maximum size of a file that you can upload is SYS_KEYWORD_MAX_FILE_SIZE"; under file section of core.lang.php
+   ADD $lang['arr_am_error']['openid_discovery_failed'] = "Your OpenID appears to be wrong or your OpenID server is down. Check the formatting of your OpenID. They normally look something like name.service.org"; under errors in common.lang.php
+   ADD $block_lang['register'] = "Register"; to the plugin/barnraiser_connection/language/x/block.lang.php file
+   ADD $block_lang['no_digest_email_set'] = "You cannot receive a discussions forum email digest because you have not provided is with an email address. To fix, disconnect, return to your OpenID account, remove trust and re-connect providing a valid email address."; to the plugin/barnraiser_forum/language/x/block.lang.php file
+   ADD $block_lang['digest_never'] = "never"; to the plugin/barnraiser_forum/language/x/block.lang.php file
+   ADD $block_lang['digest_daily'] = "daily"; to the plugin/barnraiser_forum/language/x/block.lang.php file
+   ADD $block_lang['digest_weekly'] = 	"weekly"; to the plugin/barnraiser_forum/language/x/block.lang.php file
+   ADD $block_lang['digest_monthly'] = "monthly"; to the plugin/barnraiser_forum/language/x/block.lang.php file
+   ADD $block_lang['set_digest'] =	"update email digest"; to the plugin/barnraiser_forum/language/x/block.lang.php file
+   ADD $lang['arr_log']['title']['wiki_page_revised'] =	"wiki page revised"; to the plugin/barnraiser_wiki/language/x/plugin_common.lang.php file
+   ADD $lang['arr_log']['body']['wiki_page_revised'] =	"revised a <a href=\"SYS_KEYWORD_WIKI_REVISION_URL\">wiki page</a>."; to the plugin/barnraiser_wiki/language/x/plugin_common.lang.php file
+
+
+>> From version 1.6 to version 1.6.1
+   1. Backup [never skip this]
+   2. Upload the new installation into a new directory
+   3. Copy the /assets/ directory contents to the new directory.
+   4. Copy actross (if there) the .htaccess file.
+   5. Run the installation. When prompted for a database name choose the same
+      name. The installer will not overwrite your database information.
+   6. Re-point your URL from your old directory to your new
+      directory.
+
+   DATABASE CHANGES
+   Add the following table (for email cotact form plugin)
+   
+   CREATE TABLE `am_plugin_contact_recipient` (
+    `webspace_id` int(11) NOT NULL,
+    `recipient_email` varchar(100) NOT NULL
+   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+   LANGUAGE PACKS
+   No changes have taken place.
+
+
+
+
+// DOCUMENT ENDS -------------------------------------------------------

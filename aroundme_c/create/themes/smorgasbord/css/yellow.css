@@ -1,0 +1,220 @@
+/* HTML TAGS */
+html { 
+  width:100%; 
+  text-align: center; 
+  background-color: #666; 
+  font-family: Lucida Grande, Lucida Sans Unicode, Bitstream Vera Sans, Geneva, Helvetica, Arial, sans-serif; 
+}
+
+body { 
+  margin-right:auto; 
+  margin-left:auto; 
+  width:900px; 
+  text-align: left;
+  background-color: #fff;
+}
+
+a {
+  font-weight: 
+  bold; color: #e1b60c;
+}
+
+h1, h2, h3, h4, h5 {
+  text-transform: capitalize;
+  font-weight:bold;
+  margin:18px 0 2px 0;
+  color: #000;
+  font-size:1em;
+}
+
+h1 {
+  font-size:24px;
+}
+
+h2 {
+  font-size:16px;
+}
+
+h3 {
+  font-size:14px;
+}
+
+h4 {
+  font-size:13px;
+}
+
+p {
+  font-size:1em;
+  margin:1em 0px 1.5em 0px;
+}
+
+ul {
+  padding-left: 18px;
+}
+
+pre { overflow: auto; font-size: 130%; background-color: #eee; padding: 6px; }
+
+
+/* OUTTER TEMPLATE */
+#am_menu_container { font-size: 70%; text-align:right; color: silver; padding:6px; background-color: #666; }
+#am_menu_container a { color: silver; }
+#am_menu_container a:hover { color: white; }
+#am_menu_container .highlight { color: #eee; }
+
+#id_session_reload_image { 
+  clear:both; 
+  background-color: #666;
+  margin:0px;
+}
+
+
+/* COLUMNS */
+#col_left_420 {
+  float:left;
+  width: 410px;
+  margin-left: 20px;
+}
+
+#col_right_420 {
+  float:left;
+  width: 410px;
+  margin-left: 40px;
+}
+
+#col_left_520 {
+  float:left;
+  width: 510px;
+  margin-left: 20px;
+}
+
+#col_right_320 {
+  float:left;
+  width: 310px;
+  margin-left: 40px;
+}
+
+/* CUSTOM BLOCKS */
+#navigation {
+  text-align:center;
+  width:900px;
+  color: #dcdcdc;
+  float:left;
+  background-color: #ffd73a;
+  font-size: 1.4em;
+}
+
+#navigation a {
+  color: #fff;
+}
+
+#navigation a:hover { 
+  color: #666;
+}
+
+#navigation li { 
+  display: inline; 
+  margin:4px; 
+}
+
+#navigation .highlight { 
+  text-decoration: none;
+}
+
+#footer {
+  font-size: 70%; 
+  text-align:center; 
+  background-color: #666; 
+  color: silver; 
+  padding:6px;
+}
+
+#footer a { 
+  color: silver; 
+}
+
+#footer a:hover { 
+  color: white; 
+}
+
+/* AVATARS */
+.gallery_item { height:40px; width:40px; float: left; }
+
+.avatar_placeholder { border: 1px solid black; margin-bottom:3px; margin-right:3px; background-color: #edebe9; width: 36px; height: 36px; }
+.no_avatar div { border: 1px solid black; margin-bottom:3px; margin-right:3px; background-color: #efede8; width: 36px; height: 36px; }
+.avatar img { border: 1px solid black; margin-bottom:3px; margin-right:3px; background-color: silver; width: 36px; height: 36px; }
+
+/* PLUGINS */
+.share .block .block_body li { display: inline; margin-right:12px; }
+
+.barnraiser_blog_list li {
+  margin-bottom: 12px;
+}
+
+.barnraiser_forum_subject_list li {
+  margin-bottom: 12px;
+}
+
+.li_avatar {
+float:left;
+}
+
+.li_content {
+margin-left:44px;
+}
+
+.block {
+  margin-bottom: 12px;
+}
+
+.block_footer {
+  text-align: right;
+  margin-top: 6px;
+}
+
+.block_footer a {
+  padding-top:1px;
+  padding-bottom:1px;
+  padding-left:3px;
+  padding-right:3px;
+  font-size: 0.8em;
+  font-weight: bold;
+  background-color: #eee;
+  color: #000;
+  border: 1px solid;
+  border-color: #aaa #000 #000 #aaa;
+  text-decoration: none;
+  text-transform : uppercase;
+  margin: 1px;
+}
+
+.barnraiser_forum_tagcloud .tag_size5 {
+font-size: 1.8em;
+}
+
+.barnraiser_forum_tagcloud .tag_size4 {
+font-size: 1.6em;
+}
+
+.barnraiser_forum_tagcloud .tag_size3 {
+font-size: 1.4em;
+}
+
+.barnraiser_forum_tagcloud .tag_size2 {
+font-size: 1.2em;
+}
+
+.barnraiser_forum_subject textarea { 
+  width: 500px; 
+  font-size:140%;
+}
+
+.barnraiser_wiki_page textarea { 
+  width: 500px; 
+  font-size:140%;
+}
+
+
+.barnraiser_blog_entry textarea { 
+  width: 500px; 
+  font-size:140%;
+}

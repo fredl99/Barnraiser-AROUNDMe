@@ -1,0 +1,361 @@
+// -----------------------------------------------------------------------
+// This file is part of AROUNDMe
+// 
+// Copyright (C) 2003-2008 Barnraiser
+// http://www.barnraiser.org/
+// info@barnraiser.org
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program; see the file COPYING.txt.  If not, see
+// <http://www.gnu.org/licenses/>
+// -----------------------------------------------------------------------
+
+
+>> AROUNDMe collaboration server installation guide
+   This guide is intended for anyone wishing to install AROUNDMe
+   collaboration server. An understanding of domain name setup, FTP,
+   changing directory privileges and web servers is required. Please
+   read the terms of the license prior to installation.
+
+
+>> Overview
+   You can create many web sites (called "webspaces"). Each webspace
+   has a unique URL such as http://gardening.example.org
+   or http://pottery.example.org .
+
+   This guide covers a four step installation; uploading AROUNDMe
+   collaboration server, setting up your domain, running the installer
+   and finally accessing and testing your installation.
+
+
+>> Pre installation checks
+   AROUNDMe collaboration server requires a web server running either
+   Apache 1.3/2.x or IIS5/IIS6 with PHP5.x installed including Curl,
+   BCMath and GD library. AROUNDMe collaboration server additionally
+   requires a MySQL 4.1 or MySQL 5.0 database.
+
+   The installer does it's best to check for these things and inform you,
+   so if in doubt the best strategy is to continue.
+
+
+
+>> Extracting and uploading
+   Download the latest release of AROUNDMe collaboration server and
+   unzip/untar it onto your local computer. FTP upload ALL the files up
+   to a directory on your webserver. Write down the path to the index.php
+   file which will be something like:
+
+       /public_html/aroundme_c_20080327/aroundme_c/
+
+   The above path will be used for all following examples.
+
+
+>> Setting up your webspace subdomains
+   * Multiple webspaces with wildcard subdomains
+     There are many ways to set up AROUNDMe collaboration server. If you
+     would like to run a service whereby anyone can create a webspace
+     with or without your approval go to Appendix A.
+
+   * Manual subdomain creation
+     You can install AROUNDMe so that you manually create subdomains which
+     is the option you will probably have if you are on a shared hosting
+     account. This means you manually point http://gardening.example.org to
+     your installation then set up a webspace called 'gardening'. If you would
+     like this option please go to Appendix B.
+
+   * One webspace with no sub domains
+     If you do not have access to create sub domains and you only want one
+     webspace which will be your main web site go to Appendix C.
+
+   * Locahost installation for testing
+     If you are testing this installation on your local computer please see
+     Appendix D.
+
+
+>> Installing AROUNDMe collaboration server
+   The installer will ask you for your OpenID account. If you do not
+   have one you have three options:
+
+   1. Obtain an account from a service such as http://barnraiser.info/
+   2. Download and install AROUNDMe Personal identity and set up your own
+      identity. AROUNDMe Personal identity is free software and available
+      from http://www.barnraiser.org/
+   3. Download and install AROUNDMe identity server and set up an OpenID
+      identity account service. AROUNDMe identity server is free software
+      and available from http://www.barnraiser.org/
+
+   Open your browser and type in your main domain URL. You will be
+   presented with an installation screen. Follow the instructions on
+   screen. Once complete AROUNDMe collaboration server will be installed
+   and you will be taken to a maintainance screen where you can create
+   your first webspace.
+
+
+>> Testing your installation
+   Create a webspace by clicking 'create webspace'. Follow the
+   instructions to create your first webspace.
+
+   If you installed AROUNDMe collaboration server with the option of
+   'automatic creation' you can follow the link to your new webspace.
+
+   If you installed AROUNDMe collaboration server with the option of
+   'maintainer approval' you will need to return to the maintainance
+   screen, list webspaces, select it and set the status of the webspace
+   to 'live', then follow the link to the webspace.
+
+   Press 'connect' and enter your OpenID URL and press 'GO'. You will now
+   be taken to your own OpenID and asked for your password. Look up at
+   the browser URL and confirm that it displays your OpenID URL. If so
+   enter your password.
+
+   Follow through your usual OpenID authentication process. Afterwards
+   you will be returned to your webspace where you will be logged
+   in.
+
+   Your installation is fully working. See the Quickstart guide on our web
+   site for a more information on creating your web site.
+
+   Please note that you can log into your maintainance area at any time by
+   typing in http://example.org/maintain.php into a browser.
+
+
+>> Adding registration
+   You can include a link to a remote registration script for people to
+   obtain an OpenID account without having to leave your web site. You can
+   either install your own OpenID server or use a service:
+
+   You can download and install AROUNDMe identity server and set up an OpenID
+   identity account service. AROUNDMe identity server is free software
+   and available from http://www.barnraiser.org/ . Alternatively you are
+   welcome to use Barnraisers OpenID server, but if comes with
+   no uptime garantee. The URL is http://barnraiser.info/register.php?remote=1
+
+   If you have a remote registration URL open
+   aroundm_c/core/config/core.config.php and locate the line:
+
+   $core_config['openid_account_registration'] = "";
+
+   and add in your URL:
+
+   $core_config['openid_account_registration'] = "http://barnraiser.info/register.php?remote=1";
+
+   Save it and you will see a registration button appear in the webspace
+   connect page.
+
+
+>> Adding automated email notifications
+   If you would like email digests and notifications sent out please go to
+   Appendix E.
+
+
+>> Appendix A – installation for a multiple webspaces
+   To create an installation where you can choose a webspace name such as
+   'research' and have the webspace URL work from http://research.example.org
+   you need wildcard domains pointing to your webserver. You can test this
+   by typing the following domains into your browser:
+
+      http://www.example.org
+      http://foo.example.org
+      http://example.org
+
+   All of these should go to your webserver. If they do, then you are
+   ready to continue to install AROUNDMe identity server. If not, contact
+   your Internet service provider support team and request that all
+   subdomains be pointed to your webserver.
+
+   Point your main domain name to the installation path. Each Internet service
+   provider has a different way to set up this. Look through your control panel
+   and if in doubt contact your Internet service provider support team and ask
+   them "How do I point http://example.org (including all sub domains) to
+   /public_html/aroundme_c_20080327/aroundme_c/ "?
+
+   Once set up continue with 'Installing AROUNDMe collaboration server'. If
+   you cannot setup wilcard domains go to Appendix B.
+
+
+>> Appendix B – Manual sub domain based webspaces
+   If you are on a shared hosting solution you will probably be able to
+   manually create subdomains. For each webspace that you require you will
+   need to create a sub domain and point it to your installation. We use an
+   example webspace name of 'research' here.
+
+   Point your main domain name and each sub domains to the installation path.
+   Each Internet service provider has a different way to set up this. Look
+   through your control panel and if in doubt contact your Internet service
+   provider support team and ask them "How do I point http://example.org and
+   http://research.example.org to
+   /public_html/aroundme_c_20080327/aroundme_c/ "?
+
+   Once set up continue with 'Installing AROUNDMe collaboration server'.
+   When you come to create webspaces you must choose a webspace URL that
+   matches your subdomain; in this case 'research'.
+
+
+>> Appendix C – One webspace with no sub domains
+   We assume that you have either one subdomain such as
+   http://research.example.org/ or one domain such as
+   http://www.example.org and that you want one webspace that you
+   create to show when use use that URL.
+
+   Create a file in the directory called '.htaccess':
+
+   /public_html/aroundme_c_20080327/aroundme_c/.htaccess
+
+   Copy the texts below into it and save.
+
+   #start of copy into .htaccess for research subdomain ................
+      RewriteEngine On
+      RewriteCond %{HTTP_HOST} !^research\.example\.org [NC]
+      RewriteRule ^(.*)$ http://research.example.org/$1 [R=301,L]
+   #end of copy into .htaccess ................
+
+   #start of copy into .htaccess for main www domain ................
+      RewriteEngine On
+      RewriteCond %{HTTP_HOST} !^www\.example\.org [NC]
+      RewriteRule ^(.*)$ http://www.example.org/$1 [R=301,L]
+   #end of copy into .htaccess ................
+
+   Once set up continue with 'Installing AROUNDMe collaboration server'.
+
+   As soon as complete installation you will be taken to the maintainance
+   area. Press the 'Configure' menu item.
+
+   Under 'Domains' you will see Parse and render. Make the changes listed
+   below.
+
+   research: change...
+      /(.*?)\.research.example.com/
+      http://REPLACE.research.example.com/
+
+   to....
+      /(.*?)\.example.com/
+      http://REPLACE.example.com/
+
+   www: change...
+      /(.*?)\.www.example.com/
+      http://REPLACE.www.example.com/
+
+   to....
+      /(.*?)\.example.com/
+      http://REPLACE.example.com/
+
+   When you come to create webspaces you will be prompted to pick a webspace
+   URL. Enter 'research' or 'www'.
+
+
+>> Appendix D – localhost installation for testing
+   If you are installing on a localhost then there is a good chance
+   that you are a different user that your web server. You therefore
+   need to alter the owner of the AROUNDMe collaboration server files and
+   modify their permissions.
+
+   Establish the owner name of your web server (in this example we use
+   Apache). Type 'ps aux' into your command line and look for processes
+   with the name 'apache'. You will see the owner; in this case 'www-data':
+
+   Change the owner recursively ( -R) to 'www-data' on the AMc directory.
+
+       chown -R www-data /<path>/aroundme_c<build_date>/
+
+   You may need to be connected as root to do this. If the operating
+   system reports that you do not have permissions then repeat the
+   equivalent command as root (example for Ubuntu):
+
+      sudo chown -R www-data /<path>/aroundme_c<build_date>/
+
+   Next modify the permissions:
+
+   chmod -R 770 /<path>/aroundme_c<build_date>/
+
+   The following uses the example webspace name of 'gardening'. The
+   following assumes you have access to edit your Apache vhosts file
+   which is typically held in /etc/apache2/sites-enabled/ (backup
+   then edit 000-default). Then add the texts below. Once complete
+   restart Apache.
+
+      <VirtualHost *:80>
+         ServerName gardening.localhost
+         DocumentRoot /home/www/aroundme_c/aroundme_c
+         DirectoryIndex index.php index.html index.html index.htm index.shtml
+      </VirtualHost>
+
+   You can create multiple vhost entries to test for multiple webspaces.
+
+   Once set up continue with 'Installing AROUNDMe collaboration server'.
+
+
+>> Appendix E – CRON
+   1. Open aroundm_c/core/config/core.config.php. Locate the line
+
+      $core_config['php']['cron_active'] = 0;
+
+      change to
+
+      $core_config['php']['cron_active'] = 1;
+
+      and save.
+
+  2. Adding forum tracking notifications to cron
+     Forum notifications are sent to whomever requested one when someone adds
+     a reply to a discussion in the forum.
+
+     Use CPanel or similar or edit your cron file directly from a command
+     line editor (crontab -e)
+
+     You should consider the number of projected users, the number of
+	 projected notifications, the number of mail servers and the processing
+	 speed of your server when doing this. If you are unsure and you just
+	 want to get up and running set this to execute every 15 minutes add:
+
+	 10,25,40,55 * * * * /usr/bin/php -q /<your_path>/aroundme_c/plugins/barnraiser_forum/cron/send_subject_email_notification.cron.php
+
+  3. Adding forum digest newsletters to cron
+     Forum digests are sent daily, weekly or monthly as per user request.
+
+     Use CPanel or similar or edit your cron file directly from a command
+     line editor (crontab -e)
+
+     You should consider the number of projected users, the number of
+	 projected notifications, the number of mail servers and the processing
+	 speed of your server when doing this. If you are unsure and you just
+	 want to get up and running set this to execute every 15 minutes add:
+
+	 0,15,30,45 * * * * /usr/bin/php -q /<your_path>/aroundme_c/plugins/barnraiser_forum/cron/send_digest.cron.php
+
+
+>> Appendix F – Installation into your www root directory
+     For reason we cannot explain some ISP's will not give you access to direct
+     your sub-domains to a sub-directory. If you are unlucky enough to be one of
+     these individuals here is how you install into the www root directory:
+
+  1. Take all the files and directories in aroundme_c_20080327/aroundme_c/ and
+     put them in your www root directory.
+  2. Take all the files and directories except aroundme_c/ and
+     put them in your www root directory.
+  3. Rename the asset/ directory to something less obvious such as asset_AH32.
+  4. Manually edit the core/config/core.config.php file in a text editor.
+  5. Go to line 113 and replace:
+
+        $core_config['file']['dir'] = "../asset/";
+
+     With
+
+        $core_config['file']['dir'] = "asset_AH32/";
+
+     Save your config file.
+
+  6. Proceed as above with a normal installation.
+
+
+
+// END OF DOCUMENT -------------------------------------------------------------------

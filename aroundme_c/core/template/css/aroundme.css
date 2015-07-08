@@ -1,0 +1,262 @@
+/*
+// -----------------------------------------------------------------------
+// This file is part of AROUNDMe
+// 
+// Copyright (C) 2003-2008 Barnraiser
+// http://www.barnraiser.org/
+// info@barnraiser.org
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program; see the file COPYING.txt.  If not, see
+// <http://www.gnu.org/licenses/>
+// -----------------------------------------------------------------------
+*/
+
+
+
+@media print {
+}
+
+@media screen {
+
+}
+
+@media screen,print {
+	/* standard xhtml tags */
+	html {
+		font-size: 101%;
+		padding:0px;
+		margin:0px;
+	}
+	
+	body {
+  		font-family:Verdana, Arial, SunSans-Regular, Sans-Serif;
+		color: #333;
+		background-color:#FFF;
+		font-size: 80%;
+		margin:0px;
+		padding:0px;
+		height: 100%;
+	}
+	
+	input[type="submit"], input[type="button"] {
+		font-family: arial, "lucida console", sans-serif;
+		background-color: #EEE;
+		color: #333;
+		text-transform: uppercase;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		padding-left: 2px;
+		padding-right: 2px;
+		font-weight: bold;
+		border: 1px solid #ccc;
+		border-bottom: 1px solid #333;
+		border-right: 1px solid #333;
+		margin:2px;
+		font-size: 80%;
+	}
+
+	input[type="text"], input[type="password"] {
+		width: 16em;
+	}
+
+	label {
+		float:left;
+		font-weight:bold;
+		margin-right:10px;
+		width:120px;
+		text-align: right;
+		text-transform: capitalize;
+	}
+
+	.radio_label {
+		text-align: left;
+		margin-left: 6px;
+		float: none;
+		font-weight:normal;
+		
+	}
+	
+	select {
+		width:16em;
+	}
+
+	form p {
+		margin-top: 20px;
+	}
+
+	form .note {
+		margin-left:130px;
+		font-style: italic;
+		font-size: 90%;
+		width: 24em;
+		margin-top: 2px;
+	}
+
+	input[type="radio"] {
+		margin-left:130px;
+
+	}
+
+	td input[type="radio"] {
+		margin-left:0px;
+	}
+
+	form .buttons {
+		text-align:right;
+		margin-right: 60px;
+	}
+
+	th {
+		text-align: left;
+		text-transform: capitalize;
+	}
+	
+	blockquote p {
+		quotes:"\201C" "\201D" "\2018" "\2019";
+	}
+
+	blockquote p:before {
+		content:open-quote;
+	}
+
+	blockquote p:after {
+		content:close-quote;
+	}
+
+	/* AROUNDMe main containers CSS */
+	#error_container {
+		background-color: #f3f3f3;
+		padding: 10px;
+		margin: 0px;
+		border-bottom: 1px solid #999;
+		color: #FF5A5A;
+		font-weight: bold;
+	}
+
+	#am_menu_container {
+		z-index: 500;
+	}
+
+	#am_menu_container ul {
+		padding:0px;
+		margin:0px;
+	}
+
+	#am_menu_container li {
+		display: inline;
+		margin:2px;
+	}
+	
+	#am_menu_container .highlight {
+		text-decoration: none;
+	}
+	
+	#interface_system_message {
+		padding:12px;
+		position:fixed;
+		margin-left:30%;
+		margin-right:30%;
+		top:30%;
+		width:40%;
+		background-color:white;
+		border:1px solid black;
+		color:black; 
+	}
+
+	#interface_system_message_header {
+		font-weight: bold;
+		color: red;
+	}
+	
+	#interface_system_message_footer {
+		margin:10px;
+		text-align:right;
+		color:black;
+		text-decoration:underline;
+		cursor: pointer;
+	}
+	
+	#interface_system_message_body a {
+		color:black;
+		text-decoration:underline;
+	}
+
+	/* ADMINSTRATION CSS */
+	.box {
+	}
+
+
+	/* OTHER CSS */
+	.quote {
+		background-color: #EEE;
+		text-decoration: none;
+		padding:2px;
+	}
+	
+	.quote_source {
+		color: #eb13cc;
+		font-weight: bold;
+	}
+
+	#openid_login {
+		background: url('../img/openid_logo.png') no-repeat;
+		background-position: 3px 2px;
+		padding-left:28px;
+	}
+	
+	.avatar_gallery {
+		width: 120px;
+		float: left;
+	}
+	
+	/* IE AND FF workarounds */
+	.cursor_hand {
+		cursor: pointer;
+	}
+	
+	#am_admin #body_container {
+		margin: 10px;
+	}
+	#am_admin #col_left_50 {
+		float:left;
+		display: inline;
+		width: 49%;
+	}
+
+	#am_admin #col_right_50 {
+		float:right;
+		width: 49%;
+	}
+	
+	#am_admin #col_left_70 {
+		float:left;
+		display: inline;
+		width: 69%;
+	}
+
+	#am_admin #col_right_30 {
+		float:right;
+		width: 29%;
+	}
+	
+	iframe #remote_register {
+		width: 100%;
+		height: 520px;
+		border: none;
+	}
+
+	#id_session_reload_image {
+		clear:both;
+	}
+}
